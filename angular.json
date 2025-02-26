@@ -29,7 +29,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/env.js"
             ],
             "styles": [
               "src/styles.scss"
