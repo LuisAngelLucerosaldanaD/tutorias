@@ -27,7 +27,7 @@ export const MAT_SELECT_SCROLL_STRATEGY = new InjectionToken<() => ScrollStrateg
 );
 
 @Component({
-  selector: 'df-dropdown',
+  selector: 'dft-dropdown',
   standalone: true,
   imports: [
     CdkConnectedOverlay,
@@ -218,6 +218,16 @@ export class DropdownComponent implements OnInit, ControlValueAccessor {
     if (this._multiple && Array.isArray(newValue)) {
       this.data.forEach((item) => {
         item['selected'] = newValue.includes(item[this.optionValue]);
+      });
+      this.triggerValue = this.data.filter((item) => item['selected']).map((item) => item[this.optionValue]).join(', ');
+      this._changeDetectorRef.markForCheck();
+      return true;
+    }
+
+    if (this._multiple && typeof newValue === 'string') {
+      const values = newValue.split(',').map((item) => item.trim());
+      this.data.forEach((item) => {
+        item['selected'] = values.includes(item[this.optionValue]);
       });
       this.triggerValue = this.data.filter((item) => item['selected']).map((item) => item[this.optionValue]).join(', ');
       this._changeDetectorRef.markForCheck();

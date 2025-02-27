@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+.row-data {
+  &:hover {
+    background-color: #ECF6FD;
+  }
+}
+
+.item-selected {
+  background-color: #ECF6FD;
+}

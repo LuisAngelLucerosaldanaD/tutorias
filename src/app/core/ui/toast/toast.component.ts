@@ -14,7 +14,7 @@ import {ToastItemComponent} from '../toast-item/toast-item.component';
 import {ToastService} from '../../services/ui/toast.service';
 
 @Component({
-  selector: 'df-toast',
+  selector: 'dft-toast',
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
